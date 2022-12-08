@@ -65,20 +65,27 @@
   :init
   (setq evil-want-keybinding nil)
   :config
-  (evil-mode)
+  (evil-mode 1)
+  (evil-set-undo-system 'undo-redo))
 
-  (use-package evil-escape
-    :ensure t
-    :init
-    (setq-default evil-escape-key-sequence "jk")
-    :config
-    (evil-escape-mode 1))
+(use-package evil-escape
+  :after evil
+  :ensure t
+  :init
+  (setq-default evil-escape-key-sequence "jk")
+  :config
+  (evil-escape-mode 1))
 
-  (use-package evil-surround
-    :ensure t
-    :config
-    (global-evil-surround-mode 1))
-)
+(use-package evil-surround
+  :after evil
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
+
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config (evil-collection-init))
 
 
 ;; Autocompletion
@@ -89,7 +96,6 @@
   (setq company-minimum-prefix-length 3)
   (global-company-mode t)
 )
-
 
 (use-package irony
   :ensure t
@@ -104,7 +110,8 @@
     (add-to-list 'company-backends 'company-irony))
   )
 
-
+(use-package sly
+  :ensure t)
 
 
 

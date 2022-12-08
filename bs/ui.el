@@ -51,9 +51,8 @@
 (fset #'yes-or-no-p #'y-or-n-p)
 ;; Truly silence startup message
 (fset #'display-startup-echo-area-message #'ignore)
-;; enabled by default; no thanks, too distracting
-(blink-cursor-mode -1)
-
+(blink-cursor-mode +1)
+(global-hl-line-mode +1)
 
 (use-package doom-themes
   :ensure t
@@ -62,7 +61,7 @@
   (setq doom-themes-enable-italic t)
   (doom-themes-visual-bell-config)
   (doom-themes-org-config)
-  (load-theme 'doom-one t)
+  (load-theme 'doom-tomorrow-night t)
 )
 
 (use-package all-the-icons :ensure t)

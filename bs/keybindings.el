@@ -29,16 +29,18 @@
 
     "TAB" '(switch-to-prev-buffer :which-key "previous buffer")
     "`" '(neotree-toggle :which-key "neotree")
-    "." '(next-buffer :which-key "next buffer")
-    "," '(previous-buffer :which-key "previous buffer")
     "f" '(counsel-find-file :which-key "find file")
 
+    ;; Buffer keybindings
+    ;; ------------------
+    "b]" '(next-buffer :which-key "next buffer")
+    "b[" '(previous-buffer :which-key "previous buffer")
     "bb" '(ivy-switch-buffer :which-key "buffers")
     "by" '(buffer::copy :which-key "buffer yank")
     "bc" '(buffer::clear :which-key "buffer clear")
     "be" '(eval-buffer :which-key "eval buffer")
 
-    "d" '(kill-buffer :which-key "kill-buffer")
+    "bK" '(kill-buffer :which-key "kill-buffer")
 
     "wl"  '(windmove-right :which-key "move right")
     "wh"  '(windmove-left :which-key "move left")
